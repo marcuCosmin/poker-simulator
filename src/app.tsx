@@ -1,13 +1,17 @@
-import { Container, GlobalStyle } from "./app.styles"
+import { GlobalStyle } from "./app.styles"
 
-export const testid = "app-container"
+import { Main } from "./components"
+
+import { AuthProvider, ThemeProvider } from "./contexts"
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Container data-testid={testid}>Poker Simulator</Container>
-    </>
+    <AuthProvider>
+      <ThemeProvider>
+        <GlobalStyle />
+        <Main />
+      </ThemeProvider>
+    </AuthProvider>
   )
 }
 
